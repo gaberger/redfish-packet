@@ -8,14 +8,12 @@
    [clojure.repl :refer [apropos dir doc find-doc pst source]]
    [clojure.test :refer [run-all-tests]]
    [clojure.tools.namespace.repl :refer [refresh refresh-all]]
-   [com.walmartlabs.lacinia :as lacinia]
-   [edge.phonebook.graphql :as graphql]
    [edge.system :as system]
    [integrant.repl :refer [clear halt prep init reset reset-all]]
    [integrant.repl.state :refer [system]]
    [io.aviso.ansi]
    [yada.test :refer [response-for]]
-   edge.yada.lacinia))
+   ))
 
 (defn go []
   (let [res (integrant.repl/go)]
@@ -44,15 +42,6 @@
 
 ;; REPL Convenience helpers
 
-(defn graphql [q]
-  (lacinia/execute (:edge.graphql/schema system) q nil system))
-
-(defn graphql-stream [q]
-  (edge.yada.lacinia/subscription-stream
-    (:edge.graphql/schema system)
-    q))
-
-;; (graphql "query { person(id:102) { firstname phone surname }}")
 
 (defn executor-stats []
   (->> system :edge/executor .getStats manifold.executor/stats->map))

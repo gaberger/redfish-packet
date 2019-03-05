@@ -1,5 +1,0 @@
-{:paths ["src" "resources"]
- :deps
- {
-  hiccup {:mvn/version "1.0.5"}
-  }}

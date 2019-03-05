@@ -14,7 +14,7 @@
   <logger name="edge" level="DEBUG"/>
   <logger name="juxt.kick" level="DEBUG"/>
 
-  <root level="INFO">
+  <root level="DEBUG">
     <appender-ref ref="CONSOLE" />
   </root>
 </configuration>

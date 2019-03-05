@@ -1,5 +1,0 @@
-{:paths ["src" "resources"]
- :deps
- {
-  venantius/accountant {:mvn/version "0.2.4"}
-  }}
